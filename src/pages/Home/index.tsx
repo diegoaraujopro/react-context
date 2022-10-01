@@ -7,7 +7,7 @@ export function Home() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
+    <>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p className="header">
@@ -22,7 +22,9 @@ export function Home() {
           </button>
           <br />
           <br />
-          <Link to="/signin">Sign In</Link>
+          <Link to="/signin" className="App-link">
+            Sign In
+          </Link>
 
           <p> Don&apos;t forgot to install Eslint and Prettier in Your Vscode.</p>
 
@@ -50,6 +52,6 @@ export function Home() {
           </p>
         </div>
       </header>
-    </div>
+    </>
   );
 }

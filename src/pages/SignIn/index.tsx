@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
@@ -6,10 +6,12 @@ import { AuthContext } from '../../contexts/AuthContext';
 export function SignIn() {
   const { signed, signIn, signOut } = useContext(AuthContext);
 
+  const [signInText, setSignInText] = useState('Sign In');
+
   async function handleSignIn() {
-    console.log('login');
+    setSignInText('loading...');
     await signIn();
-    console.log('loged');
+    setSignInText('Sign In');
   }
 
   function handleSignOut() {
@@ -23,17 +25,19 @@ export function SignIn() {
           Sign Out
         </button>
         <br />
-        <Link to="/protected">Dashboard (Protected)</Link>
+        <Link to="/protected" className="App-link">
+          Dashboard (Protected)
+        </Link>
       </>
     );
   } else {
     return (
       <>
-        <button title="Sign In" onClick={handleSignIn}>
-          Sign In
-        </button>
+        <button onClick={handleSignIn}>{signInText}</button>
         <br />
-        <Link to="/protected">Dashboard (Protected)</Link>
+        <Link to="/protected" className="App-link">
+          Dashboard (Protected)
+        </Link>
       </>
     );
   }
