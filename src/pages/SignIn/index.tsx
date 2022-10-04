@@ -28,6 +28,10 @@ export function SignIn() {
         <Link to="/protected" className="App-link">
           Dashboard (Protected)
         </Link>
+        <br />
+        <Link to="/protected-2" className="App-link">
+          Settings (Protected)
+        </Link>
       </>
     );
   } else {
@@ -37,6 +41,10 @@ export function SignIn() {
         <br />
         <Link to="/protected" className="App-link">
           Dashboard (Protected)
+        </Link>
+        <br />
+        <Link to="/protected-2" className="App-link">
+          Settings (Protected)
         </Link>
       </>
     );
